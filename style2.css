@@ -57,7 +57,7 @@ body {
    /* 背景图片设置为bac.jpg  background-image: url(bac.jpg);  */
 	overflow: hidden; /* 隐藏溢出元素盒子的内容 */
 	/* 背景图片覆盖整个元素区域，不留空白  background-size: cover;*/
-	font-size: 10px; /* 字体大小为25像素 */
+	font-size: 20px; /* 字体大小为25像素 */
 	font-family: '华文行楷'; /* 字体设置为华文行楷 */
 	transition: opacity 7s; /* 不透明度变化过渡时间为7秒 */
   }
