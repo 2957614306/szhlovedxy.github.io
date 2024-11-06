@@ -1,0 +1,63 @@
+body {
+	background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+}
+
+.blokken {
+	position: relative;
+	background-color: #fff;
+	width: calc(100vw - 10rem);
+	min-height: calc(100vh - 10rem);
+	box-shadow: -0.5rem 0.5rem 1rem rgba(0,0,0,0.3);
+	margin: 5rem;
+	font-size: 2rem;
+	background-image: linear-gradient(to bottom, #fff calc(1em - 1px), #ccc calc(1em - 1px), #ccc 1em, #fff 1em);
+	background-position: 0% 1em;
+	background-size: 100% 1em;
+	background-repeat: repeat-y;
+	transition: opacity 2s; /* 0.5秒的过渡时间，1秒的延迟 */
+	opacity: 0s;
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		box-shadow: -0.5rem 0.5rem 1rem rgba(0,0,0,0.1);
+	}
+	
+	&:before {
+		transform: rotate(-2deg);
+		z-index: -1;
+	}
+	
+	&:after {
+		transform: rotate(2deg);
+		z-index: -2;
+	}
+}
+
+
+/* 神秘的box */
+#box {
+	position: absolute; /* 绝对定位，相对于其最近的已定位（非 static）祖先元素定位 */
+	left: 0; /* 距离其包含块的左边缘0距离 */
+	top: 1; /* 距离其包含块的顶部0距离 */
+	z-index: 1000; /* 在z轴上的位置，负值意味着它将位于其他元素的后面 */
+	opacity: 0; /* 完全透明 */
+	color: #d9afd9; /* 文本颜色为青绿色 */
+	padding-left: 5vw; /* 左内边距为视口宽度的5% */
+	padding-right: 5vw; /* 右内边距为视口宽度的5% */
+	padding-top: 13vh; /* 上内边距为视口高度的13% */
+	width: 90vw; /* 宽度为视口宽度的90% */
+	height: 87vh; /* 高度为视口高度的87% */
+	text-align: center; /* 文本居中对齐 */
+   /* 背景图片设置为bac.jpg  background-image: url(bac.jpg);  */
+	overflow: hidden; /* 隐藏溢出元素盒子的内容 */
+	/* 背景图片覆盖整个元素区域，不留空白  background-size: cover;*/
+	font-size: 25px; /* 字体大小为25像素 */
+	font-family: '华文行楷'; /* 字体设置为华文行楷 */
+	transition: opacity 7s; /* 不透明度变化过渡时间为7秒 */
+  }

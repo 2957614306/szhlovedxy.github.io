@@ -1,6 +1,7 @@
 let heart = document.querySelector('.heart')
 let card = document.querySelector('.card')
 let box = document.querySelector('#box')
+
 heart.addEventListener('click',function(){
     card.setAttribute("style","opacity:0");
     let x = document.createElement("audio");
@@ -31,14 +32,28 @@ setTimeout(() => {
         print();
         if(i==str.length)
         clearInterval(printid);
-        },190);  // 190毫秒打一个字，其实细心发现的话，这个项目还是有个小小的bug，无法用语言描述这个bug，如果你想优化的话 有一种简单的方法就是调快打字的速度，这样那个bug看起来就不会很明显,我太菜了 不会改那个bug
-}, 5500);  //5500毫秒开始打字
-// 背景出现
+        },100);  // 190毫秒打一个字，其实细心发现的话，这个项目还是有个小小的bug，无法用语言描述这个bug，如果你想优化的话 有一种简单的方法就是调快打字的速度，这样那个bug看起来就不会很明显,我太菜了 不会改那个bug
+}, 2000);  //5500毫秒开始打字
+
+// 背景字出现
 function appearBackground(){
-setTimeout(()=>{
-box.style.opacity=1
-},1500)
+    setTimeout(()=>{
+        box.style.opacity=1
+    },1500)
 }
 appearBackground()
+// 调用切换CSS函数
+// 切换CSS文件的函数
+function switchStylesheet() {
+    const styles1 = document.getElementById('style1');
+    const styles2 = document.getElementById('style2');
+    // 禁用style1
+    styles1.disabled = true;
 
+    // 设置延迟时间，例如500毫秒后启用style2
+    setTimeout(function() {
+        styles2.disabled = false;
+    }, ); // 延迟时间可以根据需要调整
+}
+switchStylesheet();
 })
